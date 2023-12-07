@@ -1,0 +1,131 @@
+:root {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Andika', sans-serif;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  font-family: 16px;
+  --text-ligth: 200;
+  --text-medium: 400;
+  --text-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.body--ligth {
+  --bg: #e1d8fa;
+  --bg2: #be94fd;
+  --bg-secondary: white;
+  --text-color: #242323;
+
+  --bubble1: #b834e7;
+  --bubble2: #b834e744;
+  --bubble3: #249abe;
+  --bubble4: #249abe44;
+
+  --btn: #916ff0;
+  --btn3: #482e6e;
+}
+
+.body--dark {
+  --bg: rgb(34, 20, 53);
+  --bg2: rgb(17, 15, 24);
+  --bg-secondary: black;
+  --text-color: #f8f8f8;
+
+  --bubble1: #1f565c;
+  --bubble2: #1f565c44;
+  --bubble3: #bd329c;
+  --bubble4: #bd329c44;
+
+  --btn: #d2c6f5;
+  --btn3: #9c83e7;
+}
+
+.body {
+  background: linear-gradient(80deg, var(--bg), var(--bg2));
+  color: var(--text-color);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#up{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, var(--bubble1), var(--bubble2));
+  filter: blur(80px);
+}
+
+#down{
+  position: absolute;
+  right: 0;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, var(--bubble3), var(--bubble4));
+  filter: blur(100px);
+  animation: up 30s infinite;
+}
+
+@keyframes down{
+  0%, 100%{
+    top: -100px;
+  }
+  70%{
+    top: 700px;
+  }
+}
+
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--bg-secondary);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 20px;
+  border: none;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--bg);
+}
+
+#progress {
+  height: 2px;
+  background-color: var(--text-color);
+  position: fixed;
+  top: 6vh;
+  left: 0;
+  z-index: 10;
+  width: 30%;
+}
